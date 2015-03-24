@@ -57,7 +57,7 @@ describe('Test the business logic of the Angular Clock', function() {
 
   describe('StoppuhrController', function(){
     describe('test ....', function(){
-      it('should check if clockDataService is available', inject(function($controller, _stopwatch_){
+      it('should check if stopwatch is available', inject(function($controller, _stopwatch_){
         var scope = {},
         stopwatch = _stopwatch_,
         ctrl = $controller('StoppuhrControler', {$scope:scope});
@@ -74,7 +74,7 @@ describe('Test the business logic of the Angular Clock', function() {
 
 
   /* ======================================== */
-  /*          DIRECTIVE TESTS                */
+  /*            DIRECTIVE TESTS               */
   /* ======================================== */
 
 
@@ -82,11 +82,9 @@ describe('Test the business logic of the Angular Clock', function() {
 
 
   /* ======================================== */
-  /*          SERVICE TESTS                */
+  /*            SERVICE TESTS                 */
   /* ======================================== */
  
-  it('should work', function(){
-    expect(1).toBe(1);
-  });
+  
 
 });
