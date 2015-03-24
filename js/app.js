@@ -1,6 +1,7 @@
 // Modul ClockApp
 var clockapp = angular.module('ClockApp', [
-	'ngRoute'
+	'ngRoute',
+  'ngAnimate'
 
 	]);
 

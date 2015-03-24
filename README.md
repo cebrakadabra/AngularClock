@@ -39,7 +39,7 @@ Stoppuhr View:
  Kür:
 --------------
 
- [0%] der Wechsel zwischen den Views wird anhand CSS animiert (Wechsel zwischen Uhrzeit-View und Stoppuhr-View). Der Animationseffekt kann z.B. ein Crossfade sein. Dazu das AngularJS-Module ng-animate verwenden.
+ [100%] der Wechsel zwischen den Views wird anhand CSS animiert (Wechsel zwischen Uhrzeit-View und Stoppuhr-View). Der Animationseffekt kann z.B. ein Crossfade sein. Dazu das AngularJS-Module ng-animate verwenden.
 
  [100%] Persistance: die Liste der Zeiten wird im Local Storage gespeichert. Zu Beginn wird die Liste ausgelesen und im Service als Initialwert gesetzt.
 
