@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for js/services.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">js/services.js</span></h1>
+    <h2>
+        Statements: <span class="metric">2% <small>(2 / 100)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2% <small>(2 / 100)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">js/</a> &#187; services.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// **************************************************************
+// **************************************************************
+// Service für die digitale und analoge Businesslogik der App 
+// **************************************************************
+// **************************************************************
+clockapp.factory('clockDataService', ['$interval', '$filter',  <span class="fstat-no" title="function not covered" >function($interval, $filter){</span>
+&nbsp;
+	// Objekt clockdata
+	// enthält Variablen, die nach außen
+	// sichtbar sein sollen und die
+	// später returned werden 
+<span class="cstat-no" title="statement not covered" >	var clockdata = {</span>
+		offset: "",
+		digital: "",
+		hourRotation: 0,
+		minuteRotation: 0,
+		secondRotation: 0
+	},
+	_timezoneOffset = 0,
+	_now = 0;
+&nbsp;
+&nbsp;
+	// erzeugt pro Sekunde ein new Date
+	// berechnet die Rotation für die analoge Uhrzeit pro Sekunde neu
+	// formatiert digitale Uhrzeit sowie den Offset korrekt
+<span class="cstat-no" title="statement not covered" >	var _calculateRotation = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		_now = new Date();</span>
+<span class="cstat-no" title="statement not covered" >		clockdata.hourRotation = 360 * _getHours() / 12;</span>
+<span class="cstat-no" title="statement not covered" >		clockdata.minuteRotation = 360 * _getMinutes() / 60;</span>
+<span class="cstat-no" title="statement not covered" >		clockdata.secondRotation = 360 * _getSeconds() / 60;</span>
+<span class="cstat-no" title="statement not covered" >		clockdata.digital = _formatTime();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		clockdata.offset = _formatOffset(_timezoneOffset);</span>
+	};
+&nbsp;
+	
+	// setzt den Zeitzonenoffset je nach Userinput und
+	// setzt die Grenzen mit +/-12 richtig
+<span class="cstat-no" title="statement not covered" >	var _setTimezoneOffset = <span class="fstat-no" title="function not covered" >function (timezoneOffset) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if(timezoneOffset == _timezoneOffset) {</span>
+<span class="cstat-no" title="statement not covered" >			return;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		timezoneOffset = timezoneOffset % 24;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if(timezoneOffset &lt; -12) {</span>
+<span class="cstat-no" title="statement not covered" >			timezoneOffset += 24;</span>
+		} else <span class="cstat-no" title="statement not covered" >if(timezoneOffset &gt;= 12) {</span>
+<span class="cstat-no" title="statement not covered" >			timezoneOffset -= 24;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		_timezoneOffset = timezoneOffset;</span>
+	};
+&nbsp;
+&nbsp;
+	// gibt den aktuellen Zeitzonenoffset zurück
+<span class="cstat-no" title="statement not covered" >	var _getTimezoneOffset = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		return _timezoneOffset;</span>
+	};
+&nbsp;
+	// gibt die aktuelle Stunde (UTC) +/- dem aktuellen Zeitzonenoffset
+<span class="cstat-no" title="statement not covered" >	var _getHours = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		return (_now.getUTCHours() + _timezoneOffset + 24)%24;</span>
+	};	
+&nbsp;
+	// gibt die aktuelle Minute (UTC) zurück
+<span class="cstat-no" title="statement not covered" >	var _getMinutes = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		return _now.getUTCMinutes();</span>
+	};
+&nbsp;
+	// gibt die aktuelle Sekunde (UTC) zurück
+<span class="cstat-no" title="statement not covered" >	var _getSeconds = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		return _now.getUTCSeconds();</span>
+	};
+&nbsp;
+	// formatiert den Zeitzonenoffset je nach Wert
+<span class="cstat-no" title="statement not covered" >	var _formatOffset = <span class="fstat-no" title="function not covered" >function (off) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if(off &gt; 0){</span>
+<span class="cstat-no" title="statement not covered" >			var _newoffstyle = "+"+off;</span>
+<span class="cstat-no" title="statement not covered" >			return _newoffstyle;</span>
+		} <span class="cstat-no" title="statement not covered" >if(off == 0){</span>
+<span class="cstat-no" title="statement not covered" >			var _newoffstyle = "+/- "+off;</span>
+<span class="cstat-no" title="statement not covered" >			return _newoffstyle;</span>
+		} <span class="cstat-no" title="statement not covered" >if(off &lt; 0){</span>
+<span class="cstat-no" title="statement not covered" >			return off;</span>
+		}
+	};
+&nbsp;
+	// manuelle Formatierung der digitalen Uhrzeit (wenn Wert &lt; 10)
+	// date: format  bzw. mithilfe von $filter von Angular 
+	// kann hier leider nicht eingesetzt werden
+<span class="cstat-no" title="statement not covered" >	var _formatTime = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var h = _getHours();</span>
+<span class="cstat-no" title="statement not covered" >		var min = _getMinutes();</span>
+<span class="cstat-no" title="statement not covered" >		var s = _getSeconds();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if(s &lt; 10){</span>
+<span class="cstat-no" title="statement not covered" >			s = "0"+s;</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if(min &lt; 10){</span>
+<span class="cstat-no" title="statement not covered" >			min = "0"+min;</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if(h &lt; 10){</span>
+<span class="cstat-no" title="statement not covered" >			h = "0"+h;</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return h + ":" + min + ":" + s;</span>
+	};
+&nbsp;
+&nbsp;
+	// zählt eine Stunde dazu und setzt den Zeitzonenoffset neu
+<span class="cstat-no" title="statement not covered" >	var plushour =  <span class="fstat-no" title="function not covered" >function (){</span></span>
+<span class="cstat-no" title="statement not covered" >		_setTimezoneOffset(_getTimezoneOffset() + 1);</span>
+	}
+&nbsp;
+	// zieht eine Stunde ab und setzt den Zeitzonenoffset neu
+<span class="cstat-no" title="statement not covered" >	var minushour = <span class="fstat-no" title="function not covered" >function (){</span></span>
+<span class="cstat-no" title="statement not covered" >		_setTimezoneOffset(_getTimezoneOffset() - 1);</span>
+	}
+&nbsp;
+	// setzt die Uhrzeit auf die UTC Zeit zurück
+<span class="cstat-no" title="statement not covered" >	var resetToLocal = <span class="fstat-no" title="function not covered" >function (){</span></span>
+<span class="cstat-no" title="statement not covered" >		_setTimezoneOffset(0);</span>
+	}
+&nbsp;
+	
+	// Intervalfunktion, um die Rotation für die AnalogClock pro Sekunde zu berechnen,
+	// sowie die Zeit der Digital Clock zu aktualisieren
+<span class="cstat-no" title="statement not covered" >	$interval(_calculateRotation, 1000);</span>
+<span class="cstat-no" title="statement not covered" >	_calculateRotation(); </span>// Erstaufruf der privaten Funktion _calculateRotation
+&nbsp;
+&nbsp;
+	// Objekt clockdata und Funktionen, die nach außen sichtbar sein sollen returnen
+<span class="cstat-no" title="statement not covered" >	return {</span>
+		plushour: plushour,
+		minushour: minushour,
+		resetToLocal: resetToLocal,
+		clockdata: clockdata
+	}  
+	
+}]); // Ende von clockDataService
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+// **************************************************************
+// **************************************************************
+// Service für die Businesslogik der Stoppuhr
+// **************************************************************
+// **************************************************************
+clockapp.factory('stopwatch', ['$interval', '$filter', <span class="fstat-no" title="function not covered" >function ($interval, $filter) {</span>
+&nbsp;
+	// Objekt stopwatchdata 
+	// enthält Variablen, die nach außen
+	// sichtbar sein sollen und die
+	// später returned werden 
+<span class="cstat-no" title="statement not covered" >	var stopwatchdata = { </span>
+		timevalueID: 0,
+		timevalue: 0,
+		description: "",
+		timelist: []
+	},
+	_starttime = 0,
+	_laptime = 0,
+	_stopwatch = null;
+	
+&nbsp;
+	// private Initialisierungsfunktion
+	// prüft ob der LocalStorage leer ist
+	// sonst wird die Liste der Zeiten aus dem LocalStorage geladen und
+	// die aktuelle fortlaufende Nummer auf das letzte Element gesetzt 
+<span class="cstat-no" title="statement not covered" >	var _init = <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if(localStorage.getItem("timelist") === null){</span>
+<span class="cstat-no" title="statement not covered" >			stopwatchdata.timelist = [];</span>
+		} else{
+<span class="cstat-no" title="statement not covered" >			var _getObjects = localStorage.getItem("timelist");</span>
+<span class="cstat-no" title="statement not covered" >			stopwatchdata.timelist = JSON.parse(_getObjects);</span>
+<span class="cstat-no" title="statement not covered" >			stopwatchdata.timevalueID = stopwatchdata.timelist[stopwatchdata.timelist.length-1].ID;</span>
+		}
+		
+	};
+&nbsp;
+	// new Date().getTime() wird benötigt
+	// um die Millisekunden überhaupt 3 stellig anzeigen
+	// zu können
+<span class="cstat-no" title="statement not covered" >	var	_now = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		return (new Date()).getTime();</span>
+	};
+&nbsp;
+&nbsp;
+	// Funktion zur Ausführung des Stoppuhrstarts
+<span class="cstat-no" title="statement not covered" >	var start = <span class="fstat-no" title="function not covered" >function () {</span></span>
+		// Wenn die Startzeit gesetzt, dann nimm die Startzeit, sonst die von _now()
+		// wird zum Beispiel benötigt, wenn wieder nach einem Stop auf Start gedrückt wird
+<span class="cstat-no" title="statement not covered" >		_starttime = _starttime ? _starttime : _now();</span>
+		// Intervalfunktion für die Stoppuhr, die den Wert alle 100ms vorantreibt,
+<span class="cstat-no" title="statement not covered" >		_stopwatch = $interval(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >				var newTime = _gettime();</span>
+<span class="cstat-no" title="statement not covered" >				stopwatchdata.timevalue = newTime;</span>
+	    	}, 100);
+	};
+&nbsp;
+	// Stoppt die Stoppuhr beim aktuellen Wert
+<span class="cstat-no" title="statement not covered" >	var stop = <span class="fstat-no" title="function not covered" >function() {</span></span>
+		// laptime bezeichnet die gerade angezeigte Zeit
+<span class="cstat-no" title="statement not covered" >		_laptime = _starttime ? _laptime + _now() - _starttime : _laptime;</span>
+<span class="cstat-no" title="statement not covered" >		_starttime = 0;</span>
+		// stoppt das aktuelle aktualisierungs Intervall der Stoppuhr (sozusagen den Heartbeat)
+<span class="cstat-no" title="statement not covered" >		$interval.cancel(_stopwatch);</span>
+<span class="cstat-no" title="statement not covered" >		_stopwatch = null;</span>
+	};
+&nbsp;
+	// setzt die Stoppuhr komplett zurück, auch localStorage reset
+<span class="cstat-no" title="statement not covered" >	var reset = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		_laptime = _starttime = 0;</span>
+<span class="cstat-no" title="statement not covered" >		stop();</span>
+<span class="cstat-no" title="statement not covered" >		stopwatchdata.timevalue = 0;</span>
+<span class="cstat-no" title="statement not covered" >		stopwatchdata.timevalueID = 0;</span>
+<span class="cstat-no" title="statement not covered" >		stopwatchdata.description = "";</span>
+<span class="cstat-no" title="statement not covered" >		stopwatchdata.timelist = [];</span>
+<span class="cstat-no" title="statement not covered" >		localStorage.clear();</span>
+	};
+&nbsp;
+	// gibt die aktuell verstrichene Zeit zurück, wieder mithilfe von Alternativtrue und Alternativfalse
+<span class="cstat-no" title="statement not covered" >	var _gettime = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		return _laptime + (_starttime ? _now() - _starttime : 0);</span>
+	};
+&nbsp;
+&nbsp;
+	// die Funktion speichern für die Liste der Zeiten
+<span class="cstat-no" title="statement not covered" >	var save = <span class="fstat-no" title="function not covered" >function () {</span></span>
+    	// Increment ID of timevalue
+<span class="cstat-no" title="statement not covered" >    	stopwatchdata.timevalueID++;</span>
+    	// pushed die ID, die Zeit mithilfe von Angular date $filter (sehr praktisch) und die Description in das timelist array
+<span class="cstat-no" title="statement not covered" >    	stopwatchdata.timelist.push({ID: stopwatchdata.timevalueID, timetoSave: $filter('date')(stopwatchdata.timevalue, 'mm:ss,sss') , timedesc: stopwatchdata.description});</span>
+    	// setzt die letzte Description wieder auf einen leeren string
+<span class="cstat-no" title="statement not covered" >    	stopwatchdata.description = "";</span>
+    	// schreibt das aktuelle timelist array in den localStorage
+<span class="cstat-no" title="statement not covered" >    	localStorage.setItem("timelist", JSON.stringify(stopwatchdata.timelist));</span>
+    };
+&nbsp;
+&nbsp;
+    // löscht die aktuelle Zeitliste, auch aus dem localStorage
+<span class="cstat-no" title="statement not covered" >    var clearlist = <span class="fstat-no" title="function not covered" >function () { </span></span>
+    	// setzt die aktuelle Description auf einen leeren String
+<span class="cstat-no" title="statement not covered" >    	stopwatchdata.description = "";</span>
+    	// setzt das timelist array auf ein leeres Array zurück
+<span class="cstat-no" title="statement not covered" >    	stopwatchdata.timelist = [];</span>
+    	// löscht somit auch, das im localStorage gespeicherte Array 
+<span class="cstat-no" title="statement not covered" >    	localStorage.clear();</span>
+    };
+&nbsp;
+    // löscht das zu löschende Element aus der Liste der Zeiten
+<span class="cstat-no" title="statement not covered" >    var deleteitem = <span class="fstat-no" title="function not covered" >function (time) {</span></span>
+    	// aktuell geklickter Index mithilfe von Angular finden
+<span class="cstat-no" title="statement not covered" >    	var index = stopwatchdata.timelist.indexOf(time);</span>
+    	// Index aus Array entfernen
+<span class="cstat-no" title="statement not covered" >    	stopwatchdata.timelist.splice(index, 1);</span>
+    	// localStorage updaten
+<span class="cstat-no" title="statement not covered" >    	localStorage.setItem("timelist", JSON.stringify(stopwatchdata.timelist));</span>
+    };
+&nbsp;
+    // Erstaufruf der privaten Initialisierungsfunktion, für die Liste der Zeiten
+<span class="cstat-no" title="statement not covered" >    _init();</span>
+&nbsp;
+&nbsp;
+    // Objekt stopwatchdata und Funktionen, die nach außen sichtbar sein sollen returnen
+<span class="cstat-no" title="statement not covered" >    return {</span>
+    	stopwatchdata: stopwatchdata,
+    	start: start,
+    	stop: stop,
+    	reset: reset,
+    	save: save,
+    	clearlist: clearlist,
+    	deleteitem: deleteitem
+    };
+&nbsp;
+&nbsp;
+}]); // Ende von stopwatch
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 25 2015 00:34:07 GMT+0100 (CET)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
