@@ -1,0 +1,35 @@
+<div class="clockviewstyle">
+  <div class="graybg">
+    <button ng-click="toggle = !toggle" ng-class="{'changeClock' : toggle}">Switch to Analog Clock View</button>
+    <button ng-click="toggle = !toggle" ng-class="{'changeClock' : !toggle}">Switch to Digital Clock View</button>
+  </div>
+  <br>
+  <br>
+
+  <div ng-class="{'changeClock' : toggle}">
+    <div digital-clock digital={{ClockService.clockdata.digital}} offset={{ClockService.clockdata.offset}}></div>
+  </div>
+  <div ng-class="{'changeClock' : !toggle}">
+    <div analog-clock hourrotation={{ClockService.clockdata.hourRotation}} minuterotation={{ClockService.clockdata.minuteRotation}} secondrotation={{ClockService.clockdata.secondRotation}} offset={{ClockService.clockdata.offset}}></div>
+  </div>
+
+  <br>
+  <br>
+  <button ng-click="ClockService.plushour()">+1</button>
+  <button ng-click="ClockService.minushour()">-1</button>
+  <button ng-click="ClockService.resetToLocal()">Reset to UTC Time</button>
+</div>
+
+<!-- Bottom Switch Menu-->
+<div class="bottom">
+  <div class="left activeone">
+    <img src="images/worldwhite.png" alt="world" class="icon">
+    <p> Weltuhr</p>
+  </div>
+  <div class="right switchpossible" ng-click="goTo('/stoppuhr')">
+    <img src="images/stopwatch.png" alt="stopwatch" class="icon">
+    <p> Stoppuhr</p>
+  </div>
+</div>
+
+  

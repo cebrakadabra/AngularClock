@@ -1,0 +1,72 @@
+<!-- controls for the Stopwatch -->
+<div class="graybg center">
+	<button ng-click="StopWatch.start(); toggle = !toggle;" ng-class="{'changeClock' : toggle}" class="btn">Start</button>
+	<button ng-click="StopWatch.stop(); toggle = !toggle;" ng-class="{'changeClock' : !toggle}" class="btn">Stop</button>
+	<button ng-click="StopWatch.reset();" class="btn">Reset</button>
+	<br>
+	<span class="verysmall">(reset gilt auch für localStorage)</span>
+</div>
+<!-- end controls -->
+
+<div>
+	<br>
+	<br>
+	<!-- Using the directive of the digital clock  and it's controller-->
+	<div class="addtime" ng-controller="ClockController">
+		<div digital-clock digital={{ClockService.clockdata.digital}} offset={{ClockService.clockdata.offset}}></div>
+	</div>
+	<!-- end of using directive -->
+
+	<!-- Stopwatch implementation -->
+	<p class="stopwatch">{{StopWatch.stopwatchdata.timevalue | date: 'mm:ss,sss'}}</p>
+	<br>
+	<div class="center">
+		<input ng-enter="StopWatch.save()" type="text" ng-model="StopWatch.stopwatchdata.description" placeholder="Insert description" >
+		<button ng-click="StopWatch.save()">Speichern</button>
+	</div>
+	<br>
+	<br>
+	<table class="timetable">
+		<thead>
+			<tr>
+				<th>Nr.</th>
+				<th>Description</th>
+				<th>Time</th>
+				<th>X</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="time in StopWatch.stopwatchdata.timelist | orderBy:orderProp track by time.ID">
+				<td ng-repeat="(key, val) in time ">{{val}}</td>
+				<td><button ng-click="StopWatch.deleteitem(time)">X</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<div class="clearandsort">
+		<button ng-click="StopWatch.clearlist()">Liste leeren</button>
+		<span>Sortieren: </span>
+		<select ng-model="orderProp">
+			<option value="ID">Nr (aufsteigend)</option>
+		    <option value="timetoSave">Zeit (aufsteigend)</option>
+		    <option value="timedesc">Description (aufsteigend)</option>
+		    <option value="-ID">Nr (absteigend)</option>
+		    <option value="-timetoSave">Zeit (absteigend)</option>
+		    <option value="-timedesc">Description (absteigend)</option>
+		</select>
+	</div>
+	<!-- Stopwatch implementation end -->
+
+</div>
+
+<!-- Bottom Switch Menu-->
+<div class="bottom">
+	<div class="left switchpossible" ng-click="goTo('/uhrzeit')">
+		<img src="images/world.png" alt="world" class="icon">
+		<p>Weltuhr</p>
+	</div>
+	<div class="right activeone">
+		<img src="images/stopwatchwhite.png" alt="stopwatch" class="icon">
+		<p>Stoppuhr</p>
+	</div>
+</div>

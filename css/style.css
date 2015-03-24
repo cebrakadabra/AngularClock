@@ -1,0 +1,175 @@
+body{
+	font-family: Verdana;
+	width: 100%;
+	margin: 0;
+}
+
+.analogCloc{
+	display: block;
+}
+
+.digitalClock{
+	display: none;
+}
+
+.changeClock {
+    display: none;
+}
+
+.bottom{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 12%;
+	background-color: #ededed;
+}
+
+.left{
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 100%;
+}
+
+.right{
+	float: left;
+	width: 50%;
+	text-align: center;
+	height: 100%;
+}
+
+.left > p, .right > p{
+	margin: 0;
+	margin-top: 5px;
+}
+
+.activeone{
+	background-color: #f00;
+	color: #fff;
+	font-size: 20px;
+}
+
+.icon{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40px;
+	margin-top: 10px;
+}
+
+.switchpossible{
+	cursor: pointer;
+}
+
+.clockviewstyle{
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.graybg{
+	background-color: #ededed;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.digital{
+	font-size: 60px;
+}
+
+.small{
+	font-size: 20px;
+	color: #ccc;
+}
+
+.stopwatch{
+	font-size: 100px;
+	text-align: center;
+	margin: 0;
+}
+
+.center{
+	text-align: center;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.timetable{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	max-height: 300px;
+	overflow: scroll;
+}
+
+
+
+th{
+	border-bottom: 3px solid #ccc;
+}
+
+th:first-child{
+	width: 40px;
+}
+
+th:nth-child(2){
+	width: 350px;
+}
+
+th:nth-child(3){
+	width: 150px;
+}
+
+th:last-child{
+	width: 60px;
+}
+
+td{
+	text-align: center;
+	font-size: 14px;
+}
+
+td:first-child{
+	width: 40px;
+}
+
+td:nth-child(2){
+	width: 350px;
+}
+
+td:nth-child(3){
+	width: 150px;
+}
+
+td:last-child{
+	width: 60px;
+}
+
+tr{
+	border-bottom: 3px solid #ededed;
+}
+
+.clearandsort{
+	width: 600px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.btn{
+	width: 100px;
+	height: 20px;
+}
+
+div.addtime *{
+	font-size: 10px !important;
+	color: #000 !important;
+	text-align: center !important;
+}
+
+.verysmall{
+	font-size: 10px;
+}
