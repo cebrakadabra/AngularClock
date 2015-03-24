@@ -38,26 +38,32 @@ describe('Test the business logic of the Angular Clock', function() {
           scope.goTo('/uhrzeit');
           expect(location.path()).toBe('/uhrzeit');
       });
-
-
-      
-
-
-
     });
   });
 
 
   describe('ClockController', function(){
     describe('test ...', function(){
+      it('should check if clockDataService is available', inject(function($controller, _clockDataService_){
+        var scope = {},
+        clockDataService = _clockDataService_,
+        ctrl = $controller('ClockController', {$scope:scope});
 
+        expect(scope.ClockService).toBe(clockDataService);
+      }));
     });
   });
 
 
   describe('StoppuhrController', function(){
     describe('test ....', function(){
+      it('should check if clockDataService is available', inject(function($controller, _stopwatch_){
+        var scope = {},
+        stopwatch = _stopwatch_,
+        ctrl = $controller('StoppuhrControler', {$scope:scope});
 
+        expect(scope.StopWatch).toBe(stopwatch);
+      }));
     });
   });
 
