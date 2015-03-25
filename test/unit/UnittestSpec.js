@@ -77,6 +77,62 @@ describe('Test the business logic of the Angular Clock', function() {
   /*            DIRECTIVE TESTS               */
   /* ======================================== */
 
+  describe('digitalclock.html', function() {
+      var $compile, $rootScope, template;
+ 
+ 
+      //load all modules, including the html template, needed to support the test
+      beforeEach(module('ClockApp',
+        'partials/digitalclock.html'));
+     
+      beforeEach(inject(function($templateCache,_$compile_,_$rootScope_) {
+     
+        //assign the template to the expected url called by the directive and put it in the cache
+        template = $templateCache.get('partials/digitalclock.html');
+        $templateCache.put('partials/digitalclock.html',template);
+     
+        $compile = _$compile_;
+        $rootScope = _$rootScope_;
+      }));
+
+      it('Replaces the element with the appropriate content', function() {
+        // Compile a piece of HTML containing the directive
+        var element = $compile("<div digital-Clock></div>")($rootScope);
+        // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
+        $rootScope.$digest();
+        // Check that the compiled element contains the templated content
+        expect(element.html()).toContain("Clock is displaying UTC Time:");
+      });
+  });
+
+  describe('digitalclock.html', function() {
+      var $compile, $rootScope, template;
+ 
+ 
+      //load all modules, including the html template, needed to support the test
+      beforeEach(module('ClockApp',
+        'partials/analogclock.html'));
+     
+      beforeEach(inject(function($templateCache,_$compile_,_$rootScope_) {
+     
+        //assign the template to the expected url called by the directive and put it in the cache
+        template = $templateCache.get('partials/analogclock.html');
+        $templateCache.put('partials/analogclock.html',template);
+     
+        $compile = _$compile_;
+        $rootScope = _$rootScope_;
+      }));
+
+      it('Replaces the element with the appropriate content', function() {
+        // Compile a piece of HTML containing the directive
+        var element = $compile("<div analog-Clock></div>")($rootScope);
+        // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
+        $rootScope.$digest();
+        // Check that the compiled element contains the templated content
+        expect(element.html()).toContain('hours');
+      });
+  });
+
   describe('Directive: ngEnter', function () {
     beforeEach(module('ClockApp'));
     var element,
