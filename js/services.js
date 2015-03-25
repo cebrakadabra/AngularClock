@@ -47,7 +47,7 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 
 		} else if(timezoneOffset >= 12) {
 			timezoneOffset -= 24;
-			
+
 		}
 		_timezoneOffset = timezoneOffset;
 
@@ -214,12 +214,18 @@ clockapp.factory('stopwatch', ['$interval', '$filter', function ($interval, $fil
 
 	// Stoppt die Stoppuhr beim aktuellen Wert
 	var stop = function() {
-		// laptime bezeichnet die gerade angezeigte Zeit
-		_laptime = _starttime ? _laptime + _now() - _starttime : _laptime;
-		_starttime = 0;
-		// stoppt das aktuelle aktualisierungs Intervall der Stoppuhr (sozusagen den Heartbeat)
-		$interval.cancel(_stopwatch);
-		_stopwatch = null;
+		if(_starttime != 0){
+			// laptime bezeichnet die gerade angezeigte Zeit
+			_laptime = _starttime ? _laptime + _now() - _starttime : _laptime;
+			_starttime = 0;
+			// stoppt das aktuelle aktualisierungs Intervall der Stoppuhr (sozusagen den Heartbeat)
+			$interval.cancel(_stopwatch);
+			_stopwatch = null;
+
+			return true;
+		}
+		return false;
+		
 	};
 
 	// setzt die Stoppuhr komplett zurück, auch localStorage reset
