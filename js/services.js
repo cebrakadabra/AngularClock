@@ -38,7 +38,7 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 	// setzt die Grenzen mit +/-12 richtig
 	var _setTimezoneOffset = function (timezoneOffset) {
 		if(timezoneOffset == _timezoneOffset) {
-			return;
+			return timezoneOffset;
 		}
 		timezoneOffset = timezoneOffset % 24;
 

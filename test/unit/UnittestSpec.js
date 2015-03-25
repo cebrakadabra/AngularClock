@@ -129,12 +129,14 @@ describe('Test the business logic of the Angular Clock', function() {
         expect(minushour).toBe(-1);
       });
 
-      // it('should increment the Clock +1', function(){
-      //   var clockdata = clockDataService.clockdata;
-      //   scope.ClockService = clockDataService;
-      //   scope.ClockService.plushour();
-      //   console.log(scope.ClockService.clockdata);
-      // });
+      it('should reset offsetHour to 0', function () { 
+        var resetToLocal = clockDataService.resetToLocal();
+        console.log(resetToLocal);
+        expect(angular.isFunction(clockDataService.resetToLocal)).toBe(true);
+        expect(resetToLocal).toBe(0);
+      });
+
+
     });
   });
 
