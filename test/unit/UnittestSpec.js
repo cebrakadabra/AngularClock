@@ -117,7 +117,7 @@ describe('Test the business logic of the Angular Clock', function() {
 
 
 
-      it('should have an exciteText function', function () { 
+      it('should increment offsetHour +1', function () { 
         var plushour = clockDataService.plushour();
         expect(angular.isFunction(clockDataService.plushour)).toBe(true);
         expect(plushour).toBe(1);
