@@ -228,6 +228,24 @@ describe('Test the business logic of the Angular Clock', function() {
       });
 
 
+      it('should clear the list of the stopwatch', function(){
+        scope.StopWatch.start();
+        var timevalueID = scope.StopWatch.stopwatchdata.timevalueID;
+        scope.StopWatch.stop();
+        scope.StopWatch.save();
+        scope.StopWatch.save();
+        scope.StopWatch.save();
+        scope.StopWatch.save();
+        scope.StopWatch.clearlist();
+
+        var emptyArray = [];
+        
+        expect(scope.StopWatch.stopwatchdata.description).toEqual("");
+        expect(scope.StopWatch.stopwatchdata.timelist).toEqual(emptyArray);
+
+      });
+
+
 
       
 
