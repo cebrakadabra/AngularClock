@@ -48,6 +48,8 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 			timezoneOffset -= 24;
 		}
 		_timezoneOffset = timezoneOffset;
+
+		return _timezoneOffset;
 	};
 
 
@@ -110,7 +112,7 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 
 	// zählt eine Stunde dazu und setzt den Zeitzonenoffset neu
 	var plushour =  function (){
-		_setTimezoneOffset(_getTimezoneOffset() + 1);
+		return _setTimezoneOffset(_getTimezoneOffset() + 1);
 	}
 
 	// zieht eine Stunde ab und setzt den Zeitzonenoffset neu
@@ -195,12 +197,17 @@ clockapp.factory('stopwatch', ['$interval', '$filter', function ($interval, $fil
 	var start = function () {
 		// Wenn die Startzeit gesetzt, dann nimm die Startzeit, sonst die von _now()
 		// wird zum Beispiel benötigt, wenn wieder nach einem Stop auf Start gedrückt wird
-		_starttime = _starttime ? _starttime : _now();
-		// Intervalfunktion für die Stoppuhr, die den Wert alle 100ms vorantreibt,
-		_stopwatch = $interval(function(){
-				var newTime = _gettime();
-				stopwatchdata.timevalue = newTime;
-	    	}, 100);
+		if(_starttime != undefined){
+			_starttime = _starttime ? _starttime : _now();
+			// Intervalfunktion für die Stoppuhr, die den Wert alle 100ms vorantreibt,
+			_stopwatch = $interval(function(){
+					var newTime = _gettime();
+					stopwatchdata.timevalue = newTime;
+		    	}, 100);
+			return true;
+		}
+		return false;
+		
 	};
 
 	// Stoppt die Stoppuhr beim aktuellen Wert

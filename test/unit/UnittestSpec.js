@@ -84,7 +84,58 @@ describe('Test the business logic of the Angular Clock', function() {
   /* ======================================== */
   /*            SERVICE TESTS                 */
   /* ======================================== */
- 
+  describe('stopwatchService', function(){
+    describe('test ....', function(){
+      var scope, stopwatch, ctrl;
+
+      beforeEach(inject(function($controller, _stopwatch_){
+        scope = {};
+        stopwatch = _stopwatch_;
+        ctrl = $controller('StoppuhrControler', {$scope:scope});
+
+      }));
+
+      it('should start the stopwatch', function(){
+        var start = scope.StopWatch.start();
+        expect(start).toBe(true);
+        expect(start).not.toBe(false);
+      });
+    });
+  });
+
+
+
+
+  describe('clockDataService', function(){
+    describe('test ....', function(){
+      var clockDataService;
+      beforeEach(function(){
+        inject(function(_clockDataService_) {
+          clockDataService = _clockDataService_;
+        });
+      });
+
+
+
+      it('should have an exciteText function', function () { 
+        var plushour = clockDataService.plushour();
+        expect(angular.isFunction(clockDataService.plushour)).toBe(true);
+        expect(plushour).toBe(1);
+      });
+
+      // it('should increment the Clock +1', function(){
+      //   var clockdata = clockDataService.clockdata;
+      //   scope.ClockService = clockDataService;
+      //   scope.ClockService.plushour();
+      //   console.log(scope.ClockService.clockdata);
+      // });
+    });
+  });
+
+
+
+
+
   
 
 });
