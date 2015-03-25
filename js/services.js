@@ -117,12 +117,12 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 
 	// zieht eine Stunde ab und setzt den Zeitzonenoffset neu
 	var minushour = function (){
-		_setTimezoneOffset(_getTimezoneOffset() - 1);
+		return _setTimezoneOffset(_getTimezoneOffset() - 1);
 	}
 
 	// setzt die Uhrzeit auf die UTC Zeit zurück
 	var resetToLocal = function (){
-		_setTimezoneOffset(0);
+		return _setTimezoneOffset(0);
 	}
 
 	

@@ -123,6 +123,12 @@ describe('Test the business logic of the Angular Clock', function() {
         expect(plushour).toBe(1);
       });
 
+      it('should decrement offsetHour -1', function () { 
+        var minushour = clockDataService.minushour();
+        expect(angular.isFunction(clockDataService.minushour)).toBe(true);
+        expect(minushour).toBe(-1);
+      });
+
       // it('should increment the Clock +1', function(){
       //   var clockdata = clockDataService.clockdata;
       //   scope.ClockService = clockDataService;
