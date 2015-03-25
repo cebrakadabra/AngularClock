@@ -196,6 +196,18 @@ describe('Test the business logic of the Angular Clock', function() {
         expect(stop).toBe(true);
         expect(stop).not.toBe(false);
       });
+
+      it('should reset the stopwatch', function(){
+        scope.StopWatch.start();
+        scope.StopWatch.stop();
+        scope.StopWatch.reset();
+        
+        expect(scope.StopWatch.stopwatchdata.timevalue).toBe(0);
+        expect(scope.StopWatch.stopwatchdata.timevalueID).toBe(0);
+        expect(scope.StopWatch.stopwatchdata.description).toEqual("");
+
+      });
+
     });
   });
 
