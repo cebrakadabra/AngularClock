@@ -26,15 +26,18 @@ clockapp.directive('analogClock', function() {
 // Textfeld per Enter auch eine Funktion wie bei ng-click bei einem 
 // Button ausführen zu können
 clockapp.directive('ngEnter', function () {
-    return function (scope, element, attrs) {
-        element.bind("keydown keypress", function (event) {
-            if(event.which === 13) {
-                scope.$apply(function (){
-                    scope.$eval(attrs.ngEnter);
-                });
+    return {
+        controller: 'MainController',
+        link: function (scope, element, attrs) {
+            element.bind("keydown keypress", function (event) {
+                if(event.which === 13) {
+                    scope.$apply(function (){
+                        scope.$eval(attrs.ngEnter);
+                    });
 
-                event.preventDefault();
-            }
-        });
+                    event.preventDefault();
+                }
+            });
+        }
     };
 });

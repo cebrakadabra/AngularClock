@@ -77,31 +77,40 @@ describe('Test the business logic of the Angular Clock', function() {
   /*            DIRECTIVE TESTS               */
   /* ======================================== */
 
-  // describe('Unit Test: Enter Event', function () {
-  //     var elm, compile, scope;
+  describe('Directive: ngEnter', function () {
+    beforeEach(module('ClockApp'));
+    var element,
+        scope;
 
-  //     beforeEach(function () {
-  //         inject(function ($compile, $rootScope) {
-  //             compile = $compile;
-  //             scope = $rootScope.$new();
-  //         });
-  //     });
+    beforeEach(inject(function ($rootScope) {
 
-  //     /*unit test 1*/
-  //     it("Enter Key should call the method inside controller", function () {
-  //         scope.enterEvent = jasmine.createSpy('enterEvent');
-  //         var e = jQuery.Event("keydown", {
-  //             keyCode: 13
-  //         });
-  //         elm = angular.element('<input type="text" ng-Enter="enterEvent()">');
-  //         elm = compile(elm)(scope);
+      scope = $rootScope;
+      scope.mockFunction = function(){};
+      compileDirective();
 
-  //         //elm.trigger(e);
-  //         scope.$digest();
+    }));
 
-  //         expect(scope.enterEvent).toHaveBeenCalled();
-  //     });
-  // });
+    /**
+     * Compile the directive into HTML
+     */
+    function compileDirective(){
+      element = angular.element('<input type="text" ng-enter="mockFunction()" />');
+      inject(function($compile){
+        element = $compile(element)(scope);
+      });
+      scope.$apply();
+    }
+
+    it('it should call the mock function on pressing enter', function () {
+      spyOn(scope,'mockFunction');
+      var e = jQuery.Event('keypress');
+      e.which = 13; //choose the one you want
+      e.keyCode = 13;
+      element.triggerHandler(e);
+      expect(scope.mockFunction).toHaveBeenCalled();
+    });
+
+  });
 
 
 
