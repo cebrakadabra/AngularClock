@@ -44,8 +44,10 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 
 		if(timezoneOffset < -12) {
 			timezoneOffset += 24;
+
 		} else if(timezoneOffset >= 12) {
 			timezoneOffset -= 24;
+			
 		}
 		_timezoneOffset = timezoneOffset;
 
