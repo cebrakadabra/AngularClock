@@ -230,7 +230,6 @@ describe('Test the business logic of the Angular Clock', function() {
 
       it('should clear the list of the stopwatch', function(){
         scope.StopWatch.start();
-        var timevalueID = scope.StopWatch.stopwatchdata.timevalueID;
         scope.StopWatch.stop();
         scope.StopWatch.save();
         scope.StopWatch.save();
@@ -244,6 +243,25 @@ describe('Test the business logic of the Angular Clock', function() {
         expect(scope.StopWatch.stopwatchdata.timelist).toEqual(emptyArray);
 
       });
+
+
+      it('should delete an item out of list of stopwatch', function(){
+        scope.StopWatch.start();
+        scope.StopWatch.stop();
+        scope.StopWatch.save();
+        scope.StopWatch.save();
+        scope.StopWatch.save();
+        scope.StopWatch.save();
+
+        var itemToDelete = scope.StopWatch.stopwatchdata.timelist[2];
+
+        scope.StopWatch.deleteitem(itemToDelete);
+        expect(scope.StopWatch.stopwatchdata.timelist[2].ID).not.toEqual(3);
+        
+
+      });
+
+
 
 
 
