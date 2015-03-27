@@ -105,7 +105,7 @@ describe('Test the business logic of the Angular Clock', function() {
       });
   });
 
-  describe('digitalclock.html', function() {
+  describe('analogclock.html', function() {
       var $compile, $rootScope, template;
  
  
@@ -187,14 +187,12 @@ describe('Test the business logic of the Angular Clock', function() {
       it('should start the stopwatch', function(){
         var start = scope.StopWatch.start();
         expect(start).toBe(true);
-        expect(start).not.toBe(false);
       });
 
       it('should stop the stopwatch', function(){
         scope.StopWatch.start();
         var stop = scope.StopWatch.stop();
         expect(stop).toBe(true);
-        expect(stop).not.toBe(false);
       });
 
       it('should reset the stopwatch', function(){
@@ -285,16 +283,17 @@ describe('Test the business logic of the Angular Clock', function() {
 
 
       it('should increment offsetHour +1', function () { 
-        var plushour = clockDataService.plushour();
-        // console.log(plushour);
-        expect(angular.isFunction(clockDataService.plushour)).toBe(true);
+        clockDataService.resetToLocal();
+        var plushour = clockDataService.plusHour();
+        expect(angular.isFunction(clockDataService.plusHour)).toBe(true);
         expect(plushour).toBe(1);
       });
 
       it('should decrement offsetHour -1', function () { 
-        var minushour = clockDataService.minushour();
+        clockDataService.resetToLocal();
+        var minushour = clockDataService.minusHour();
         // console.log(minushour);
-        expect(angular.isFunction(clockDataService.minushour)).toBe(true);
+        expect(angular.isFunction(clockDataService.minusHour)).toBe(true);
         expect(minushour).toBe(-1);
       });
 

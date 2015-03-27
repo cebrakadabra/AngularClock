@@ -113,12 +113,12 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 
 
 	// zählt eine Stunde dazu und setzt den Zeitzonenoffset neu
-	var plushour =  function (){
+	var plusHour =  function (){
 		return _setTimezoneOffset(_getTimezoneOffset() + 1);
 	}
 
 	// zieht eine Stunde ab und setzt den Zeitzonenoffset neu
-	var minushour = function (){
+	var minusHour = function (){
 		return _setTimezoneOffset(_getTimezoneOffset() - 1);
 	}
 
@@ -136,8 +136,8 @@ clockapp.factory('clockDataService', ['$interval', '$filter',  function($interva
 
 	// Objekt clockdata und Funktionen, die nach außen sichtbar sein sollen returnen
 	return {
-		plushour: plushour,
-		minushour: minushour,
+		plusHour: plusHour,
+		minusHour: minusHour,
 		resetToLocal: resetToLocal,
 		clockdata: clockdata
 	}  
